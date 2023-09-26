@@ -1,0 +1,38 @@
+\declaretheoremstyle[
+    			headfont=\bfseries\sffamily\color{black!70!black}, bodyfont=\normalfont,
+    			mdframed={
+       				linewidth=1pt,
+        			rightline=false, topline=false, bottomline=false,
+    			}
+			]{Begruendungsbox}
+\declaretheoremstyle[
+    			headfont=\bfseries\sffamily\color{black!70!black}, bodyfont=\normalfont,
+    			mdframed={
+       				linewidth=1pt,
+        			rightline=false, topline=false, bottomline=false,
+    			}
+			]{Erinnerungsbox}
+\declaretheoremstyle[
+    			headfont=\bfseries\sffamily\color{black!70!black}, bodyfont=\normalfont, numbered=no,
+    			mdframed={
+       				linewidth=false,
+        			rightline=false, topline=false, bottomline=false,
+    			}
+			]{Zusammenfassungsbox}
+\declaretheoremstyle[
+    			headfont=\bfseries\sffamily\color{black!70!black}, bodyfont=\normalfont, numbered=no,
+    			mdframed={
+       				linewidth=0.5pt,
+        			rightline=0.5pt, topline=false, bottomline=false,
+    			}
+			]{Voraussetzungsbox}
+\declaretheorem[style=Voraussetzungsbox, name=Voraussetzung]{vrr}
+\declaretheorem[style=Zusammenfassungsbox, name=Zusammenfassen]{zsmfs}
+\newenvironment{Voraussetzung}{\begin{vrr}}{\end{vrr}}
+\newenvironment{Zusammenfassen}{\begin{zsmfs}}{\end{zsmfs}}
+\declaretheorem[style=Erinnerungsbox, name=Vermutung]{verm}
+\declaretheorem[style=Begruendungsbox, name=Begründung]{begr}
+\newenvironment{begruendung}{\begin{begr}}{\end{begr}}
+
+\declaretheorem[style=Erinnerungsbox, name=Erinnerung]{Erinnerungsdef}
+\newenvironment{Erinnerung}{\begin{Erinnerungsdef}}{\end{Erinnerungsdef}}

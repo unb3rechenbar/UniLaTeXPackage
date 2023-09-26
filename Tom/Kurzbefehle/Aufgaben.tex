@@ -1,0 +1,12 @@
+\newcounter{ex}
+			\newcounter{subex}[ex]
+			\newcounter{subsubex}[subex]
+			
+			\setcounter{ex}{1}
+ \newcommandx{\aufgabe}[1][1={}]{\ifnumgreater{\theex}{1}{\newpage}{}
+				\ifthenelse{\isempty{#1}}	
+					{\section*{Aufgabe \theex}\label{ex:\theex}\stepcounter{ex}}
+					{\section*{Aufgabe #1}\label{ex:#1}}}
+\newcommandx{\subaufgabe}[1][1={}]{\ifthenelse{\isempty{#1}}
+					{\stepcounter{subex}\subsection*{(\alph{subex})}\label{subex:\theex-\thesubex}}
+					{\stepcounter{subex}\subsection*{(#1)}\label{subex:\theex-#1}}}
