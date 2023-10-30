@@ -36,3 +36,8 @@
 
 \declaretheorem[style=Erinnerungsbox, name=Erinnerung]{Erinnerungsdef}
 \newenvironment{Erinnerung}{\begin{Erinnerungsdef}}{\end{Erinnerungsdef}}
+
+\newcommandx{\subsubaufgabe}[1][1={}]{\ifthenelse{\isempty{#1}}
+					{\stepcounter{subsubex}\subsubsection*{(\roman{subsubex})}\label{subsubex:\theex-\thesubex-\thesubsubex}}
+					{\stepcounter{subsubex}\subsubsection*{(#1)}\label{subsubex:\theex-\thesubex-#1}}}
+			\newcommand{\refsubex}[3]{[$\rightarrow$ A.#1(#2,#3)\ref{subsubex:#1.0-#2-#3}]}
