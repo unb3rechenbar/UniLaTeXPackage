@@ -41,3 +41,29 @@
 					{\stepcounter{subsubex}\subsubsection*{(\roman{subsubex})}\label{subsubex:\theex-\thesubex-\thesubsubex}}
 					{\stepcounter{subsubex}\subsubsection*{(#1)}\label{subsubex:\theex-\thesubex-#1}}}
 			\newcommand{\refsubex}[3]{[$\rightarrow$ A.#1(#2,#3)\ref{subsubex:#1.0-#2-#3}]}
+
+
+\newcounter{def}
+\newtheorem{mdefthm}{Definition}[section]
+\newenvironment{mdef}[1]{%
+    \begin{framed}
+    \begin{center}
+	\stepcounter{def}
+    \begin{minipage}{0.95\textwidth}
+    \begin{mdefthm}#1.\end{mdefthm}
+}{
+    \end{minipage}
+    \end{center}
+    \end{framed}
+}
+
+
+\declaretheorem[title=Beweis, numbered=no, qed=\qedsymbol]{newproof}
+\newtcolorbox{Beweisbox}{
+	enhanced,
+	frame hidden,
+	borderline west = 1pt,
+	colback = black!2,
+	breakable
+}
+\renewenvironment{proof}{\begin{Beweisbox}\begin{newproof}}{\end{newproof}\end{Beweisbox}}
